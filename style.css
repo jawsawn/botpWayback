@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    position: relative;
 }
 
 /*Scrollbar*/
@@ -28,10 +28,8 @@ body {
 
 .background {
     position: fixed;
-    left: 0px;
-    top: 0px;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     z-index: -1;
     background-image: url("./image.png");
     background-size: cover;
@@ -39,18 +37,34 @@ body {
     filter: blur(5px);
 }
 
-.timeline h1 {
+.timeline-title {
     margin: auto;
     width: 25rem;
     text-align: center;
     font-size: xx-large;
 }
 
-.timeline .title {
+.timeline {
+    
+}
+
+.timeline li {
+    list-style: none;
+    background-color: rgb(26, 94, 71);
+    padding: 0.4rem;
+    margin: 0.8rem auto;
+    margin-bottom: 10rem;
+    width: 25rem;
+    border-radius: 0.4rem;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.timeline h2 {
     margin: 0.2rem;
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
     background-color: rgb(62, 128, 106);
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
     width: auto;
 }
 
@@ -64,46 +78,34 @@ body {
     border-radius: 0.5rem;
     border: 1rem;
     cursor: pointer;
-    transition: all 0.2s ease-in;
+    transition: all 0.2s ease-out;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+
 }
+
 .timeline button:hover {
     background-color: rgb(142, 168, 159);
-}
-
-
-
-
-.timeline {
-    padding: 1rem 0;
-    
 }
 
 .timeline::before {
     content: "";
     position: absolute;
-    top: 10rem;
     width: 0.5rem;
-    height: 100%;
-    left: 50%;
+    min-height: 90%;
+    top:5rem;
+    left: calc(50% - 15rem);
     background: #36b69a;
-}
-
-.timeline li {
-    list-style: none;
-    background-color: rgb(26, 94, 71);
-    padding: 0.4rem;
-    margin: 0.8rem auto;
-    width: 25rem;
-    border-radius: 0.4rem;
     box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+
+    
 }
-
-
-
-.timeline li:nth-child(even) {
-    transform: translate(-15rem);
-}
-
-.timeline li:nth-child(odd) {
-    transform: translate(+15rem);
+.timeline > li::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    min-height: 10%;
+    top:5rem;
+    left: calc(50% - 15.25rem);
+    background: #ffffff;
+    
 }
